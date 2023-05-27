@@ -79,21 +79,22 @@ public class Socio implements Comparable<Socio> {
         socios[3] = new Socio("45678901D", "Ana Rodríguez Vidal", LocalDate.of(1992, 11, 25), LocalDate.of(2023, 4, 20), 55.0, 0);
         socios[4] = new Socio("56789012E", "Carlos Sánchez Senen", LocalDate.of(1987, 9, 5), LocalDate.of(2023, 3, 10), 105.0, 2);
 
-        //Stream de clientes ordenados por DNI
+        System.out.println("Clientes ordenados por DNI");
         Stream<Socio> streamOrdenadosPorDNI = Arrays.stream(socios)
                 .sorted();
         streamOrdenadosPorDNI.forEach(System.out::println);
+        System.out.println();
 
-        //Stream de clientes con cuota mayor a 100€
+        System.out.println("Clientes con cuota mayor a 100€");
         Stream<Socio> streamCuotaMayor100 = Arrays.stream(socios)
                 .filter(socio -> socio.getCuota() > 100);
-
         streamCuotaMayor100.forEach(System.out::println);
+        System.out.println();
 
-        //Stream de clientes con nombre que empieza por "A"
+        System.out.println("Clientes con nombre que empieza por \"A\"");
         Stream<Socio> streamNombresConA = Arrays.stream(socios)
                 .filter(socio -> socio.getNombre().startsWith("A"));
-
         streamNombresConA.forEach(System.out::println);
+        System.out.println();
     }
 }
